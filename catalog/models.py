@@ -60,7 +60,7 @@ class Book(models.Model):
         String que representa al objeto Book
         """
         return self.title
-
+ 
 
     def get_absolute_url(self):
         """
