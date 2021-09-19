@@ -61,7 +61,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'locallibrary.urls'
 
-TEMPLATES = [
+TEMPLATES = [ 
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [

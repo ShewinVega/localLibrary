@@ -12,7 +12,7 @@ class RenewBookForm(forms.Form):
 
   def clean_renewal_date(self):
     data = self.cleaned_data['renewal_date']
-
+  #sape
     # check if data is not in past
     if data < datetime.date.today():
       raise ValidationError(_('Invalid date - renewal in past'))
