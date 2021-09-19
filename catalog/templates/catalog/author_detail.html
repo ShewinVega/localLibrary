@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %} {% block content %}
+
+<h1>
+    Biografy:
+</h1>
+
+<p><strong>FirstName:</strong><a href=""> {{author.first_name}} </a></p>
+<p><strong>LastName:</strong>{{ author.last_name }}</p>
+<p><strong>Born:</strong>{{ author.date_of_birth }}</p>
+<p><strong>Died:</strong>{{ author.date_of_death }}</p>
+
+
+<div style="margin-left:20px;margin-top:20px">
+
+    <h4>Books</h4>
+
+    <ul>
+        {% for data in author.book_set.all %} {% if data %}
+        <li>
+            <a href=" {% url 'catalog:book-detail' data.id %} ">
+                    {{data.title}} 
+                </a>
+        </li>
+        {% endif %} {% endfor %}
+
+    </ul>
+</div>
+
+{% endblock content %}

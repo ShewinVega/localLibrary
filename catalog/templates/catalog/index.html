@@ -18,5 +18,11 @@
     <li><strong>Genres:</strong>{{num_genre}}</li>
     <li><strong>Hush count:</strong>{{num_name_books}}</li>
 </ul>
-
-{% endblock %}
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+{% if perms.catalog.can_mark_returned %}
+<!-- We can mark a BookInstance as returned. -->
+<p>Usuario tiene el permiso RETURNED</p>
+<!-- Perhaps add code to link to a "book return" view here. -->
+{% else %}
+<p>Usuario no tiene el permiso RETURNED</p>
+{% endif %} {% endblock %}
